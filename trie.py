@@ -59,6 +59,4 @@ if __name__ == '__main__':
             break
         else:
             tree.insert(src)
-            pass
-
-    print(tree)
+        print(tree)
