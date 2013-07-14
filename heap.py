@@ -66,9 +66,19 @@ class Heap:
 
             top //= 2
 
+    def pop(self):
+        buf = self.buffer
+        rtn = buf[1]
+        buf[1] = buf[-1]
+        buf.pop()
+        self.adjust(1)
+        return rtn
+
 if __name__ == '__main__':
     target = [8, 7, 1, 5, 6, 2, 4, 10, 3, 9]
     h = Heap(target)
     print('Original heap: %s' % h)
     h.insert(11)
     print('After inserting 11: %s' % h)
+    top = h.pop()
+    print('Top: %s. After pop: %s' % (top, h))
